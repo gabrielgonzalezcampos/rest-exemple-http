@@ -12,7 +12,7 @@ public class JSONService {
     protected List<Track> tracks;
 
     public JSONService() {
-        tracks = new ArrayList<>();
+        tracks = Singletone.getInstance().getTrack();
 
         Track t1 = new Track();
         t1.setTitle("Enter Sandman");
