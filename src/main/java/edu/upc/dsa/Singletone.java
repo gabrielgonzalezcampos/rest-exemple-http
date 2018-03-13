@@ -18,6 +18,15 @@ public class Singletone {
 
     private Singletone() {
         tracks= new ArrayList<>();
+        Track t1 = new Track();
+        t1.setTitle("Enter Sandman");
+        t1.setSinger("Metallica");
+        tracks.add(t1);
+
+        Track t2 = new Track();
+        t2.setTitle("La Barbacoa");
+        t2.setSinger("Georgie Dann");
+        tracks.add(t2);
     }
 
     public List<Track> getTrack(){
