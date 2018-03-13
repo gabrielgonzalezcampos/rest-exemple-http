@@ -1,13 +1,14 @@
 package edu.upc.dsa;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.ResourceBundle;
+import java.util.List;
 
 public class Singletone {
     private static Singletone ourInstance;
 
-    private HashMap<String,ResourceBundle> data;
+    private List<Track> tracks;
 
     public static Singletone getInstance() {
         if (ourInstance==null)
@@ -16,17 +17,11 @@ public class Singletone {
     }
 
     private Singletone() {
-        data= new HashMap<String, ResourceBundle>();
+        tracks= new ArrayList<>();
     }
 
-    public String GetText(String key,String language){
+    public List<Track> getTrack(){
 //        log.info("key:"+key+" "+" language"+language);
-        ResourceBundle rb= data.get(language);
-        if(rb==null)
-        {
-            rb=ResourceBundle.getBundle("I18N."+language);
-            data.put(language, rb);
-        }
-        return rb.getString(key);
+        return this.tracks;
     }
 }
